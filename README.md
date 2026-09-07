@@ -1,8 +1,8 @@
-# Internet Bird embed snippet
+# Internet bird embed snippet
 
-A migratory bird that flies over the world of the internet, from one web page to another. This is the snippet that lets you add your page to her route.
+Internet bird is a migratory bird that flies over the world of the internet, from one web page to another. This is the snippet that lets you add your page to her route.
 
-Part of the [Internet Bird](https://joub.in/bird/lands) project by [Joubin Zargarbashi](https://joubinzargarbashi.com).
+Part of the [Internet bird](https://joub.in/bird/lands) project by [Joubin Zargarbashi](https://joubinzargarbashi.com).
 
 ## How to use
 
