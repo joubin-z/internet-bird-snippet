@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Internet Bird - Embed Example</title>
+</head>
+<body>
+
+  <!-- start of bird snippet -->
+  <!-- by Joubin Zargarbashi -->
+  <div id="bird" style="width: 35px;height: 35px;position:fixed;z-index: 999;"></div>
+  <script>
+  var landId = 'YOUR_LAND_ID';
+  var peepDelay = {
+    very_far: 3600000,
+    far : 60000,
+    close: 1000
+  };
+  function spotBird(){
+    var url = 'https://joub.in/bird/location/';
+    var dataObject = { webLandId: landId };
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', url, true);
+    xhr.onload = function() {
+      var response = JSON.parse(xhr.responseText);
+      var birdData = response.birdData;
+      var bird = document.getElementById("bird");
+      bird.style.right = birdData.far*100 + "%";
+      bird.style.top = birdData.high*100 + "%";
+      bird.style.backgroundImage = "url('" + birdData.bird + "')";
+      bird.title = birdData.title;
+      setTimeout(spotBird, peepDelay[birdData.distance]);
+    };
+    xhr.onerror = function() {
+      console.log('Woops, there was an error making the request.');
+    };
+    xhr.send(JSON.stringify(dataObject));
+  }
+  spotBird();
+  </script>
+  <!-- end of bird snippet -->
+
+</body>
+</html>
